@@ -55,7 +55,7 @@ class OperadorPage extends StatelessWidget {
       ),
       body: Container(
         color: Colors.grey[300], // Fundo da página em cinza
-        padding: const EdgeInsets.symmetric(horizontal: 200.0, vertical: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 200.0, vertical: 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -75,14 +75,15 @@ class OperadorPage extends StatelessWidget {
                     Text(
                       'SECRETARIA DE TRANSPORTE E MOBILIDADE',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
+                      fontFamily: 'Open Sans', 
                       ),
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 0),
                     Text(
                       'SEMOB',
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         fontWeight: FontWeight.w500,
+                        fontFamily: 'Open Sans',
                       ),
                     ),
                   ],
