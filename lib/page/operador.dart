@@ -65,8 +65,8 @@ class OperadorPage extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/images/logogdf.png', // Certifique-se de que o caminho esteja correto
-                  width: 205, // Ajuste a largura conforme necessário
-                  height: 105, // Ajuste a altura conforme necessário
+                  width: 210, // Ajuste a largura conforme necessário
+                  height: 110, // Ajuste a altura conforme necessário
                 ),
                 SizedBox(width: 16), // Espaço entre a imagem e o texto
                 Column(
@@ -230,8 +230,6 @@ class _MyFormState extends State<MyForm> {
   }
 }
 
-// O restante do seu código permanece o mesmo...
-
 
 class PessoaFisicaForm extends StatefulWidget {
   final List<String> ufs;
@@ -271,9 +269,13 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.person, size: 24),
-        SizedBox(width: 8),
-        Text('Dados Pessoa Física', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+        Row(
+          children: [
+            Icon(Icons.person, size: 24),
+            SizedBox(width: 8),
+            Text('Dados Pessoa Física', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ]
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -345,9 +347,14 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
             ),
           ],
         ),
-        SizedBox(height: 20),
-        Text('Filiação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-        SizedBox(height: 12),
+        SizedBox(height: 24), // Adicionando um espaço de 24 pixels
+        Row(
+          children: [
+            Icon(Icons.family_restroom, size: 24),
+            SizedBox(width: 8), // Espaço entre o ícone e o texto
+            Text('Filiação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -356,10 +363,14 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
             Expanded(child: CustomTextField(label: 'Nome do Pai')),
           ],
         ),
-        Icon(Icons.assignment, size: 24),
-        SizedBox(width: 8),
-        Text('Documentação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-
+        SizedBox(height: 24), // Adicionando um espaço de 24 pixels
+        Row(
+          children: [
+            Icon(Icons.assignment, size: 24),
+            SizedBox(width: 8), // Espaço entre o ícone e o texto
+            Text('Documentação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -388,8 +399,13 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
           ],
         ),
         SizedBox(height: 20),
-        Text('Certificado de Reservista', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-        SizedBox(height: 12),
+        Row(
+          children: [
+            Icon(Icons.shield, size: 24),
+            SizedBox(width: 8),
+            Text('Certificado de Reservista', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -412,8 +428,13 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
           ],
         ),
         SizedBox(height: 20),
-        Text('Carteira Nacional de Habilitação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-        SizedBox(height: 12),
+        Row(
+          children: [
+            Icon(Icons.card_membership, size: 24),
+            SizedBox(width: 8),
+            Text('Carteira Nacional de Habilitação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -478,9 +499,13 @@ class _PessoaJuridicaFormState extends State<PessoaJuridicaForm> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.business, size: 24),
-        SizedBox(width: 8),
-        Text('Dados Pessoa Jurídica', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+        Row(
+          children: [
+            Icon(Icons.business, size: 24),
+            SizedBox(width: 8),
+            Text('Dados Pessoa Jurídica', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -520,10 +545,13 @@ class IdentificationSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.person, size: 24),
-        SizedBox(width: 8),
-        Text('Identificação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-
+        Row(
+          children: [
+            Icon(Icons.person, size: 24),
+            SizedBox(width: 8),
+            Text('Identificação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -558,10 +586,13 @@ class _AddressSectionState extends State<AddressSection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.home, size: 24),
-        SizedBox(width: 8),
-        Text('Endereço', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-
+        Row(
+          children: [
+            Icon(Icons.home, size: 24),
+            SizedBox(width: 8),
+            Text('Endereço', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -609,10 +640,13 @@ class ContactsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.phone, size: 24),
-        SizedBox(width: 8),
-        Text('Contatos', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-
+        Row(
+          children: [
+            Icon(Icons.phone, size: 24),
+            SizedBox(width: 8),
+            Text('Contatos', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -640,8 +674,13 @@ class IssSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('ISS', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
-        SizedBox(height: 12),
+        Row(
+          children: [
+            Icon(Icons.money_off, size: 24),
+            SizedBox(width: 8),
+            Text('ISS', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
