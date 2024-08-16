@@ -75,14 +75,15 @@ class OperadorPage extends StatelessWidget {
                     Text(
                       'SECRETARIA DE TRANSPORTE E MOBILIDADE',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Open Sans',
                       ),
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 0),
                     Text(
                       'SEMOB',
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Open Sans',
                       ),
                     ),
                   ],
