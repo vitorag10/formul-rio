@@ -53,69 +53,70 @@ class OperadorPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        color: Colors.grey[300], // Fundo da página em cinza
-        padding: const EdgeInsets.symmetric(horizontal: 200.0, vertical: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Adicionando a imagem e o texto na mesma linha
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/images/logogdf.png', // Certifique-se de que o caminho esteja correto
-                  width: 210, // Ajuste a largura conforme necessário
-                  height: 110, // Ajuste a altura conforme necessário
-                ),
-                SizedBox(width: 16), // Espaço entre a imagem e o texto
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'SECRETARIA DE TRANSPORTE E MOBILIDADE',
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontFamily: 'Open Sans',
-                      ),
+      body: SingleChildScrollView( // Adicionado para permitir rolagem
+        child: Container(
+          color: Colors.grey[300], // Fundo da página em cinza
+          padding: const EdgeInsets.symmetric(horizontal: 200.0, vertical: 20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/logogdf.png', // Certifique-se de que o caminho esteja correto
+                    width: 210, // Ajuste a largura conforme necessário
+                    height: 110, // Ajuste a altura conforme necessário
+                  ),
+                  SizedBox(width: 8), // Espaço entre a imagem e o texto
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'SECRETARIA DE TRANSPORTE E MOBILIDADE',
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontFamily: 'Open Sans',
+                            overflow: TextOverflow.ellipsis, // Evita overflow do texto
+                          ),
+                          maxLines: 1, // Limita o texto a uma linha
+                        ),
+                        SizedBox(height: 0),
+                        Text(
+                          'SEMOB',
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Open Sans',
+                          ),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 0),
-                    Text(
-                      'SEMOB',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Open Sans',
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 8),
-            Container(
-              width: 1200, // Ajuste o comprimento aqui
-              color: Color(0xFF005EB8), // Azul do GDF
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Formulário de Cadastro de Operador',
-                textAlign: TextAlign.center, // Centraliza o texto
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: Colors.white, // Texto em branco para contraste
+                  ),
+                ],
+              ),
+              SizedBox(height: 16), // Aumente este valor para aumentar a distância
+              Container(
+                width: double.infinity, // Ajuste o comprimento aqui para se adaptar ao conteúdo
+                color: Color(0xFF005EB8), // Azul do GDF
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'Formulário de Cadastro de Operador',
+                  textAlign: TextAlign.center, // Centraliza o texto
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white, // Texto em branco para contraste
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 24),
-            // Aqui está a modificação: Aumentar a área branca do formulário
-            Expanded(
-              child: Container(
+              Container(
                 width: double.infinity, // Ocupa toda a largura disponível
                 color: Colors.white, // Fundo do formulário em branco
                 padding: EdgeInsets.all(24.0), // Adiciona um padding interno
                 child: MyForm(),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -145,6 +146,7 @@ class _MyFormState extends State<MyForm> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      shrinkWrap: true, // Permite que o ListView ocupe apenas o espaço necessário
       children: [
         IdentificationSection(),
         SizedBox(height: 24),
@@ -221,11 +223,11 @@ class _MyFormState extends State<MyForm> {
                 backgroundColor: Colors.blue[900],
                 foregroundColor: Colors.white,
               ),
+              icon: Icon(Icons.check),
               label: Text("Cadastrar"),
             ),
           ),
         ),
-
       ],
     );
   }
