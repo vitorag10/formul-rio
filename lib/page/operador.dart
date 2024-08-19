@@ -56,7 +56,7 @@ class OperadorPage extends StatelessWidget {
       body: SingleChildScrollView( // Adicionado para permitir rolagem
         child: Container(
           color: Colors.grey[300], // Fundo da página em cinza
-          padding: const EdgeInsets.symmetric(horizontal: 200.0, vertical: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 100.0, vertical: 25.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -331,7 +331,12 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
             ),
             SizedBox(width: 16),
             Expanded(child: CustomTextField(label: 'Raça')),
-            SizedBox(width: 16),
+          ],
+        ),
+        SizedBox(height: 12), // Adicionando um espaço de 24 pixels
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
             Expanded(child: CustomTextField(label: 'Data de Nascimento')),
             SizedBox(width: 16),
             Expanded(child: CustomTextField(label: 'Naturalidade')),
@@ -457,6 +462,7 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
             ),
             SizedBox(width: 16),
             Expanded(child: CustomTextField(label: 'Órgão Exp.')),
+
             SizedBox(width: 16),
             Expanded(
               child: CustomDropdownField(
