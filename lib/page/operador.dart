@@ -435,57 +435,75 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
             ),
           ],
         ),
-        SizedBox(height: 20),
-        Row(
+        Column(
           children: [
-            Icon(Icons.card_membership, size: 24),
-            SizedBox(width: 8),
-            Text('Carteira Nacional de Habilitação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Icon(Icons.card_membership, size: 24),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'Carteira Nacional de Habilitação',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16), // Espaço entre a linha do título e os campos
+            Row(
+              children: [
+                Expanded(child: CustomTextField(label: 'Nr. Registro')),
+                SizedBox(width: 16),
+                Expanded(
+                  child: CustomDropdownField(
+                    label: 'Categoria',
+                    value: selectedCategoria,
+                    items: widget.categoriasCNH,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedCategoria = value;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(child: CustomTextField(label: 'Órgão Exp.')),
+              ],
+            ),
+            SizedBox(height: 16), // Espaço entre a linha de campos e a linha abaixo
+            Row(
+              children: [
+                Expanded(
+                  child: CustomDropdownField(
+                    label: 'UF CNH',
+                    value: selectedCNHUF,
+                    items: widget.ufs,
+                    onChanged: (newValue) {
+                      setState(() {
+                        selectedCNHUF = newValue;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: CustomTextField(
+                    label: 'Data de Expedição',
+                    controller: widget.expedicaoController,
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: CustomTextField(
+                    label: 'Validade',
+                    controller: widget.validadeController,
+                  ),
+                ),
+              ],
+            ),
           ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(child: CustomTextField(label: 'Nr.Registro')),
-            SizedBox(width: 16),
-            Expanded(
-              child: CustomDropdownField(
-                label: 'Categoria',
-                value: selectedCategoria,
-                items: widget.categoriasCNH,
-                onChanged: (value) {
-                  setState(() {
-                    selectedCategoria = value;
-                  });
-                },
-              ),
-            ),
-            SizedBox(width: 16),
-            Expanded(child: CustomTextField(label: 'Órgão Exp.')),
-
-            SizedBox(width: 16),
-            Expanded(
-              child: CustomDropdownField(
-                label: 'UF CNH',
-                value: selectedCNHUF,
-                items: widget.ufs,
-                onChanged: (newValue) {
-                  setState(() {
-                    selectedCNHUF = newValue;
-                  });
-                },
-              ),
-            ),
-            SizedBox(width: 16),
-            Expanded(
-              child: CustomTextField(label: 'Data de Expedição', controller: widget.expedicaoController),
-            ),
-            SizedBox(width: 16),
-            Expanded(
-              child: CustomTextField(label: 'Validade', controller: widget.validadeController),
-            ),
-          ],
-        ),
+        )
       ],
     );
   }
