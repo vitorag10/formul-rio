@@ -450,7 +450,7 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
                 ),
               ],
             ),
-            SizedBox(height: 16), // Espaço entre a linha do título e os campos
+            //SizedBox(height: 16), // Espaço entre a linha do título e os campos
             Row(
               children: [
                 Expanded(child: CustomTextField(label: 'Nr. Registro')),
