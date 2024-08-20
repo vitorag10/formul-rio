@@ -471,7 +471,7 @@ class _PessoaFisicaFormState extends State<PessoaFisicaForm> {
                 Expanded(child: CustomTextField(label: 'Órgão Exp.')),
               ],
             ),
-            SizedBox(height: 16), // Espaço entre a linha de campos e a linha abaixo
+            SizedBox(height: 12), // Espaço entre a linha de campos e a linha abaixo
             Row(
               children: [
                 Expanded(
