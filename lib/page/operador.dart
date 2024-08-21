@@ -574,9 +574,9 @@ class IdentificationSection extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(Icons.person, size: 24),
+            Icon(Icons.business, size: 24),
             SizedBox(width: 8),
-            Text('Identificação', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+            Text('Identificação Empresa', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
           ],
         ),
         Row(
